@@ -1,0 +1,5 @@
+jasypt:
+  encryptor:
+    password: ALPHAVANTAGE
+alphavantage:
+  apiKey: ENC(EvbSfPInUNmdihaHSMwb6M5n4XI+ECxnY5iCWwvuATg=)

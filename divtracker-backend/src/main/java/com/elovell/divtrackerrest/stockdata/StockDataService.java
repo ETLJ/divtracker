@@ -1,5 +1,7 @@
 package com.elovell.divtrackerrest.stockdata;
 
+import com.elovell.divtrackerrest.timeseriesdailyadjusted.TimeSeriesDailyAdjusted;
+
 public interface StockDataService {
-    StockData getStockData(String symbol);
+    TimeSeriesDailyAdjusted getStockData(String symbol);
 }
