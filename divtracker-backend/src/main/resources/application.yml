@@ -1,5 +1,19 @@
 jasypt:
   encryptor:
     password: ALPHAVANTAGE
+
 alphavantage:
   apiKey: ENC(EvbSfPInUNmdihaHSMwb6M5n4XI+ECxnY5iCWwvuATg=)
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      show-sql: true
+      format-sql: true
+  h2:
+    console:
+      enabled: true
+hibernate:
+  show-sql: true
+  format-sql: true
