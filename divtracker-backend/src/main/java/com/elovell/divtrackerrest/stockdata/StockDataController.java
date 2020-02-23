@@ -1,6 +1,7 @@
 package com.elovell.divtrackerrest.stockdata;
 
 import com.elovell.divtrackerrest.timeseriesdailyadjusted.TimeSeriesDailyAdjusted;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ public class StockDataController {
     }
 
     @GetMapping("/stock/{symbol}")
+    @CrossOrigin
     public StockDataResource getStockData(@PathVariable("symbol") String symbol) {
         TimeSeriesDailyAdjusted timeSeriesDailyAdjusted = stockDataService.getStockData(symbol);
         return stockDataResourceAssembler.toResource(timeSeriesDailyAdjusted);
