@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Stock } from 'src/app/model/Stock';
 import { StockDataServiceService } from 'src/app/services/stock-data-service.service';
+import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -14,7 +15,10 @@ export class PortfolioComponent implements OnInit {
   loading: boolean = true;
   stockData: Stock = {symbol: '', dividendYield: 0.00, close: 0.00};
 
-  constructor(private stockDataService: StockDataServiceService) { }
+  constructor(
+    private stockDataService: StockDataServiceService,
+    private portfolioService: PortfolioService
+    ) { }
 
   ngOnInit() {
     let stock1: Stock = {
@@ -30,10 +34,10 @@ export class PortfolioComponent implements OnInit {
     this.loadStockDataForPortfolio();
   }
 
-  getPortfolio(): Array<Stock> {
-    // this will call backend eventually
-    // this should be in a PortfolioService
-    return this.portfolio;
+  getPortfolio(userPk1: number): void {
+    this.portfolioService.getPortfolio(userPk1).subscribe(
+      portfolio => this.portfolio = portfolio
+    );
   }
 
   loadStockDataForPortfolio() {
