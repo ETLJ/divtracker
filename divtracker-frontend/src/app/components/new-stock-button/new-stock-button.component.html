@@ -1,0 +1,4 @@
+<div class="new-stock-btn" *ngIf="!showForm">
+    <button mat-raised-button color="primary" class="new-stock-button" (click)="onClick()">New</button>
+</div>
+<app-new-stock-form *ngIf="showForm" (formSubmitted)="newStockAdded()"></app-new-stock-form>

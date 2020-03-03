@@ -1,0 +1,13 @@
+<div class="new-stock">
+    <mat-card>
+        <mat-form-field appearance="legacy">
+            <mat-label>Symbol</mat-label>
+            <input matInput #input maxlength="10">
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+            <mat-label>SharesOwned</mat-label>
+            <input matInput #input maxlength="10">
+        </mat-form-field>
+        <button mat-raised-button color="accent" class="form-submit-btn" (click)="onSubmit()">Add</button>
+    </mat-card>
+</div>

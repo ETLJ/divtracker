@@ -14,6 +14,7 @@ export class PortfolioComponent implements OnInit {
   portfolio: Array<Stock> = [];
   loading: boolean = true;
   stockData: Stock = {symbol: '', dividendYield: 0.00, close: 0.00};
+  showNewButton: boolean = true;
 
   constructor(
     private stockDataService: StockDataServiceService,
@@ -50,6 +51,10 @@ export class PortfolioComponent implements OnInit {
       );
     }
     this.loading = false;
+  }
+
+  shouldShowNewStockButton() {
+    this.showNewButton = false;
   }
 
 }

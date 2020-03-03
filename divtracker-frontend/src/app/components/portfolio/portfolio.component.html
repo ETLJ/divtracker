@@ -1,24 +1,29 @@
-<table mat-table [dataSource]="portfolio" *ngIf="!loading">
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-        <th mat-header-cell *matHeaderCellDef>Symbol</th>
-        <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
-    </ng-container>
-    <!-- Shares Owned Column -->
-    <ng-container matColumnDef="sharesOwned">
-        <th mat-header-cell *matHeaderCellDef>Shares</th>
-        <td mat-cell *matCellDef="let element">{{ element.sharesOwned }}</td>
-    </ng-container>
-    <!-- Close Column -->
-    <ng-container matColumnDef="close">
-        <th mat-header-cell *matHeaderCellDef>Close Price</th>
-        <td mat-cell *matCellDef="let element">{{ element.close }}</td>
-    </ng-container>
-    <!-- Dividend Yield Column -->
-    <ng-container matColumnDef="dividendYield">
-        <th mat-header-cell *matHeaderCellDef>Dividend Yield</th>
-        <td mat-cell *matCellDef="let element">{{ element.dividendYield | number}}</td>
-    </ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+<div>
+    <div>
+        <table mat-table [dataSource]="portfolio" *ngIf="!loading">
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef>Symbol</th>
+                <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+            </ng-container>
+            <!-- Shares Owned Column -->
+            <ng-container matColumnDef="sharesOwned">
+                <th mat-header-cell *matHeaderCellDef>Shares</th>
+                <td mat-cell *matCellDef="let element">{{ element.sharesOwned }}</td>
+            </ng-container>
+            <!-- Close Column -->
+            <ng-container matColumnDef="close">
+                <th mat-header-cell *matHeaderCellDef>Close Price</th>
+                <td mat-cell *matCellDef="let element">{{ element.close }}</td>
+            </ng-container>
+            <!-- Dividend Yield Column -->
+            <ng-container matColumnDef="dividendYield">
+                <th mat-header-cell *matHeaderCellDef>Dividend Yield</th>
+                <td mat-cell *matCellDef="let element">{{ element.dividendYield | number}}</td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <app-new-stock-button (newStockInProgress)="shouldShowNewStockButton()"></app-new-stock-button>
+</div>
